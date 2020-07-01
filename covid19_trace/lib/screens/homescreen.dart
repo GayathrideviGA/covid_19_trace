@@ -1,4 +1,5 @@
-import 'package:covid19_trace/screens/bluetooth_scan.dart';
+import 'package:covid19_trace/contact.dart';
+import 'package:covid19_trace/scan.dart';
 import 'package:covid19_trace/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
       height: height,
       color: ColorConstants.primaryColor,
       child: DefaultTabController(
+        
         length: 2,
         child: Scaffold(
           appBar: PreferredSize(
@@ -26,12 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
               automaticallyImplyLeading: false,
               elevation: 0,
               bottom: TabBar(
+                indicatorColor: ColorConstants.subBg,
                 tabs: [
                   Tab(
                     text: 'Trace',
                   ),
                   Tab(
-                    text: 'View data',
+                    text: 'Person Log',
                   ),
                 ],
               ),
@@ -40,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           body: TabBarView(
             children: [
-              BluetoothScan(),
-              Icon(Icons.directions_transit),
+              MyHomePage(),
+              ContactList(),
             ],
           ),
         ),

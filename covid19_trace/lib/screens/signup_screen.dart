@@ -33,7 +33,7 @@ class RegisterState extends State<Register> {
                 .createUserWithEmailAndPassword(email: email, password: password))
             .user;
         var firebaseUser = await FirebaseAuth.instance.currentUser();
-        databaseReference.collection("users").document(firebaseUser.uid).setData({
+        Firestore.instance.collection("users").document(firebaseUser.uid).setData({
           "name": name,
           "email": email,
           "password": password,

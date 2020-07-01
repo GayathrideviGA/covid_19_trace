@@ -1,4 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+
+
 import 'package:covid19_trace/screens/signin_screen.dart';
 import 'package:covid19_trace/utils/styles.dart';
 import 'package:flutter/material.dart';
